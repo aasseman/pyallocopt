@@ -3,9 +3,10 @@
 
 from typing import Dict, Mapping, Optional, Sequence
 
-from allocopt.grt_utils import grt_decimal_to_wei
 from juliacall import Main as jl
 from juliacall import convert
+
+from allocopt.grt_utils import grt_decimal_to_wei
 
 
 def allocopt(
