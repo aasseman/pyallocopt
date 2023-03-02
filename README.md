@@ -4,7 +4,8 @@ A python wrapper for [AllocationOpt.jl](https://github.com/graphprotocol/Allocat
 
 ## Usage
 
-You will have to [install Julia](https://julialang.org/downloads/), and have it in `$PATH`.
+It can use your current [Julia installation](https://julialang.org/downloads/) if it is available in your `$PATH`,
+otherwise will install it automatically on first import.
 
 Example:
 
