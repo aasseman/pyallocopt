@@ -8,6 +8,12 @@ from juliacall import convert
 
 from allocopt.grt_utils import grt_decimal_to_wei
 
+# Make sure AllocationOpt.jl is installed
+jl.Pkg.add(
+    url="https://github.com/graphprotocol/AllocationOpt.jl",
+    rev="acccd71493e8eae121e4470636e573c0245eaf04",
+)
+
 
 def allocopt(
     indexer_address: str,
