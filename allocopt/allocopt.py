@@ -3,16 +3,7 @@
 
 from typing import Dict, Mapping, Optional, Sequence
 
-from juliacall import Main as jl
-from juliacall import convert
-
 from allocopt.grt_utils import grt_decimal_to_wei
-
-# Make sure AllocationOpt.jl is installed
-jl.Pkg.add(
-    url="https://github.com/graphprotocol/AllocationOpt.jl",
-    rev="acccd71493e8eae121e4470636e573c0245eaf04",
-)
 
 
 def allocopt(
@@ -65,6 +56,16 @@ def allocopt(
         pinnedlist = []
     if not frozenlist:
         frozenlist = []
+
+    # Import Julia modules at the last moment to not make importing pyallocopt slow.
+    from juliacall import Main as jl
+    from juliacall import convert
+
+    # Make sure AllocationOpt.jl is installed
+    jl.Pkg.add(
+        url="https://github.com/graphprotocol/AllocationOpt.jl",
+        rev="acccd71493e8eae121e4470636e573c0245eaf04",
+    )
 
     # Load the AllocationOpt.jl
     jl.seval("using AllocationOpt")
