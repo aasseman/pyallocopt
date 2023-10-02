@@ -1,6 +1,6 @@
 # PyAllocOpt
 
-A python wrapper for [AllocationOpt.jl](https://github.com/graphprotocol/AllocationOpt.jl).
+A python wrapper for [allocation-optimizer](allocation-optimizer).
 
 ## Usage
 
@@ -18,7 +18,7 @@ allocations = allocopt(
     allocation_lifetime=14,
     thegraph_network_subgraph_endpoint="http://indexer-service:7600/network",
     max_new_allocations=5,
-    tau_factor=.2,
+    min_signal=100,
     blacklist=["QmTBxvMF6YnbT1eYeRx9XQpH4WvxTV53vdptCCZFiZSprg"]
 )
 
